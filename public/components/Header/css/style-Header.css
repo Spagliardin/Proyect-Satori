@@ -57,10 +57,8 @@ html, body, .full-menu, .content {
     z-index: 0; }
     .full-menu.active .home {
       transition-delay: .3s; }
-    .full-menu.active .about {
+    .full-menu.active .ropa {
       transition-delay: .4s; }
-    .full-menu.active .works {
-      transition-delay: .5s; }
     .full-menu.active .contact {
       transition-delay: .6s; }
     .full-menu.active li {

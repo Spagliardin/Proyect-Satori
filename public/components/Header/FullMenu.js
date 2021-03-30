@@ -8,9 +8,9 @@ const FullMenu = () => {
         <div className="full-menu">
             <nav id="menu" className="menu">
                 <ul>
-                    <li>Home</li>
-                    <li>Ropa</li>
-                    <li>Contacto</li>
+                    <li className="Home">Home</li>
+                    <li className="ropa">Ropa</li>
+                    <li className="contact">Contacto</li>
                 </ul>
             </nav>
             <div class="hamburguer">
