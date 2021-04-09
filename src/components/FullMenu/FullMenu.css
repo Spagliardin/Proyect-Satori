@@ -21,7 +21,7 @@ html, body, .full-menu, .content {
 
 .full-menu {
   position: absolute;
-  background-color: #1e88e5;
+  background-color: black;
   opacity: 0.5;
   transform: translateX(100%);
   transition: all 400ms ease-in; }

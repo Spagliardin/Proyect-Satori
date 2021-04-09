@@ -1,7 +1,7 @@
-const Main = () => {
+const Main = ({img}) => {
     return(
   <main className="content">
-    <h1>Menu</h1>
+    <img src={img} alt="Logo"/>
   </main>
   )
 };
