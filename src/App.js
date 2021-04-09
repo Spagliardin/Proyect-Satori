@@ -1,11 +1,20 @@
-import Header from '../components/Header/Header.js';
+import React, { Component } from 'react'
+import FullMenu from './components/FullMenu/FullMenu'
+import Hamburguer from './components/Hamburguer/Hamburguer'
+import Main from './components/Main/Main'
+import './App.css'
 
-const App = () => {
-  return (
-    <div className="App">
-        <Header></Header>
-    </div>
-  );
+
+
+export default class App extends Component {
+
+  render() {
+    return (
+      <div>
+        <FullMenu />
+        <Hamburguer />
+        <Main />
+      </div>
+    )
+  }
 }
-
-export default App;

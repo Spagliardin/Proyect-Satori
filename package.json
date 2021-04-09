@@ -16,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-css": "node-sass --include-path scss public/components/Header/scss/style.scss public/components/Header/css/style-Header.css",
+    "build-css": "node-sass --include-path scss src/components/FullMenu/FullMenu.scss src/components/FullMenu/FullMenu.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "eslintConfig": {
