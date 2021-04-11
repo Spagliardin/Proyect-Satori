@@ -1,9 +1,12 @@
-const Main = ({img}) => {
-    return(
-  <main className="content">
-    <img src={img} alt="Logo"/>
-  </main>
-  )
-};
+import React, { Component } from 'react'
+import Cards from './Cards/Card'
 
-export default Main;
+export default class Main extends Component {
+    render() {
+        return (
+            <div>
+                <Cards />
+            </div>
+        )
+    }
+}

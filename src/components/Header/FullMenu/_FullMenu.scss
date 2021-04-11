@@ -1,0 +1,117 @@
+
+$transition-type: ease-in;
+$overlay-color: black;
+$texts-and-icons: #fff;
+$body-background: black;
+
+@keyframes zoom {
+	0%, 100% { transform: scale(1);}
+
+	50% { transform: scale(1.1);}
+}
+body{
+	overflow: hidden;
+	margin: 0;
+}
+
+.full-menu, .content {
+	color: white;
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+.content {
+	justify-content: center;
+	// background-image: url('https://images.unsplash.com/photo-1617467003718-c6727f4a0ceb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=843&q=80');
+	background-color: $body-background;
+}
+
+
+.full-menu {
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	background-color: $overlay-color;
+	opacity: 0.5;
+	transform: translateX(100%);
+	transition: all 400ms $transition-type;
+
+	li {
+		font-size: 4em;
+		color: $texts-and-icons;
+		opacity: 0;
+		transform: translateY(2%);
+		transition: all 300ms $transition-type;
+		cursor: pointer;
+
+		&:after {
+			content: "";
+			position: absolute;
+		    height: 5px;
+		    width: 0%;
+		    left: 0;
+		    bottom: 0;
+		    background-color: $texts-and-icons;
+		    transition: width 200ms $transition-type;
+		}
+
+		&:hover:after { width: 100%;}
+	}
+
+	ul { list-style: none;}
+
+	&.active {
+		transform: translateX(0%);
+		opacity: 1;
+		z-index: 0;
+
+		.home { transition-delay: .3s;}
+
+		.ropa { transition-delay: .4s;}
+
+		.contact { transition-delay: .6s;}
+
+		li {
+			opacity: 1;
+			transform: translateX(0%);
+
+			&:hover {
+				animation: zoom 200ms $transition-type;
+			}
+		}
+	}
+}
+
+
+.hamburguer {
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	margin: 3em;
+	z-index: 1;
+	cursor: pointer;
+
+	&:hover {
+		animation: zoom 300ms $transition-type;
+	}
+}
+
+.lines {
+	background-color: $texts-and-icons;
+	width: 100%;
+	height: 5px;
+	margin: 5px 0;
+	transition: all 450ms $transition-type;
+}
+
+
+.close-hamburguer {
+	.lines { cursor: pointer;}
+
+	.line-top { transform: translateY(200%) rotate(45deg);}
+
+	.line-mid { opacity: 0;}
+
+	.line-bottom { transform: translateY(-200%) rotate(135deg);}
+}
