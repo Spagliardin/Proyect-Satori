@@ -3,14 +3,13 @@
   --e: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.container-cards{
-    margin-top: 100px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+.container-cards {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
-
 
 .card {
   position: relative;
@@ -105,26 +104,36 @@
   line-height: 1.35;
 }
 
-.btn {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  margin-right: 5px;
-  margin-top: 1.5rem;
-  padding: 5px;
-  border: solid black 2px;
-  border-radius: 50%;
-  font-size: 1rem;
-  font-weight: bold;
-  color: black;
-  background: rgba(0, 0, 0, 0);
+.container-btn {
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .count{
+      font-size: 24px;
+      margin: 10px;
+      margin-top: 1.5rem;
+    }
+  .btn {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 5px;
+    border: solid black 2px;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    background: rgba(0, 0, 0, 0);
 
-  &:hover {
-    background-color: lighten(black, 10%);
-  }
+    &:hover {
+      background-color: lighten(black, 10%);
+    }
 
-  &:focus {
-    outline: 0px;
+    &:focus {
+      outline: 0px;
+    }
   }
 }
 

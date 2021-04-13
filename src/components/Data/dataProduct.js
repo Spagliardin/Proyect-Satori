@@ -10,7 +10,7 @@ const Product = [
   },
   {
       id:2,
-      img: "https://images.unsplash.com/photo-1610301103186-f028105de981?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=712&q=80",
+      img: "https://images.unsplash.com/photo-1525457136159-8878648a7ad0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
       title: 'Campera Invierno Hombre',
       desc: 'Campera invierno 2021 - La mejor',
       price: '$16000'
