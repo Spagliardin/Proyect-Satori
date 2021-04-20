@@ -4,7 +4,7 @@
 }
 
 .container-cards {
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,7 +18,7 @@
   overflow: hidden;
   padding: 1rem;
   width: 20%;
-  height: 40vh;
+  max-height: 60vh;
   margin: 40px;
   text-align: center;
   color: whitesmoke;
