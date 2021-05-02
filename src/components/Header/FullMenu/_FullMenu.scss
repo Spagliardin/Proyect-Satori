@@ -16,6 +16,7 @@ $body-background: black;
 
 * {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -23,54 +24,94 @@ body {
   margin: 0;
 }
 
-.full-menu,
-.content {
-  color: white;
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
+
 
 .content {
+  width: 100%;
   height: 15vh;
-  justify-content: space-between;
+  display: flex;
+  justify-content: center;
   align-items: center;
   background-color: $body-background;
+  color: white;
   .shopping-bag {
     position: relative;
     box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.5);
-    margin-right: 30px;
     .count {
-      position: absolute;
-      top: -10px;
-      right: -20px;
-      display: block;
       height: 15px;
       width: 15px;
-      background: black;
-      font-size: 15px;
-      box-sizing: content-box;
       padding: 6px;
+      font-weight: bold;
+      display: block;
+      position: absolute;
+      right: -18px;
+      top: -8px;
+      border: 2px solid black;
+      text-align: center;
+      background: black;
+      font-size: 1rem;
+      box-sizing: content-box;
       line-height: 15px;
       border-radius: 50%;
-      font-weight: bold;
       box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.5);
-      border: 2px solid white;
-      text-align: center;
       color: white;
     }
 
     &:hover {
       cursor: pointer;
-      background: rgba(255, 255, 255, 0.1);
-      border: 3px solid rgba(255, 255, 255, 0.3);
-      transform: scale(1.1);
-      transition: 300ms;
+      animation: zoom 300ms $transition-type;
+    }
+  }
+  .hamburguer {
+    width: 30px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 3;
+  
+    &:hover {
+      animation: zoom 300ms $transition-type;
+    }
+    
+    .lines {
+      background-color: $texts-and-icons;
+      width: 100%;
+      height: 5px;
+      margin: 5px 0;
+      transition: all 450ms $transition-type;
+    }
+  }
+  .content-Image{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    img{
+      width: 300px;
     }
   }
 }
 
+.close-hamburguer {
+  .lines {
+    cursor: pointer;
+  }
+
+  .line-top {
+    transform: translateY(200%) rotate(45deg);
+  }
+
+  .line-mid {
+    opacity: 0;
+  }
+
+  .line-bottom {
+    transform: translateY(-200%) rotate(135deg);
+  }
+}
+
 .full-menu {
+  width: 40%;
+  height: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
@@ -78,6 +119,7 @@ body {
   opacity: 0.5;
   transform: translateX(-100%);
   transition: all 400ms $transition-type;
+
 
   li {
     font-size: 4em;
@@ -101,6 +143,7 @@ body {
     &:hover:after {
       width: 100%;
     }
+
   }
 
   ul {
@@ -140,44 +183,5 @@ body {
         animation: zoom 200ms $transition-type;
       }
     }
-  }
-}
-
-.hamburguer {
-  position: absolute;
-  width: 2em;
-  height: 2em;
-  margin: 3em;
-  z-index: 3;
-  cursor: pointer;
-
-  &:hover {
-    animation: zoom 300ms $transition-type;
-  }
-}
-
-.lines {
-  background-color: $texts-and-icons;
-  width: 100%;
-  height: 5px;
-  margin: 5px 0;
-  transition: all 450ms $transition-type;
-}
-
-.close-hamburguer {
-  .lines {
-    cursor: pointer;
-  }
-
-  .line-top {
-    transform: translateY(200%) rotate(45deg);
-  }
-
-  .line-mid {
-    opacity: 0;
-  }
-
-  .line-bottom {
-    transform: translateY(-200%) rotate(135deg);
   }
 }

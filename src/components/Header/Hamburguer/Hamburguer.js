@@ -1,7 +1,7 @@
-const Hamburguer = () => {
+export const Hamburguer = () => {
     return(
   <div
-    class="hamburguer"
+    className="hamburguer"
     onClick={() => {
       document.querySelector(".full-menu").classList.toggle("active");
       document
@@ -16,4 +16,4 @@ const Hamburguer = () => {
   )
 };
 
-export default Hamburguer
+

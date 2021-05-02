@@ -1,27 +1,49 @@
-import React, { Component } from "react";
-import Cards from "./Cards/Card";
+import { Cards } from "./Cards/Card";
 import Product from "../Data/dataProduct";
 
-export default class Main extends Component {
-  constructor() {
-    super();
-    this.state = {
-      items: [],
-    };
+import React, { useState } from "react";
 
-    setTimeout(() =>{
-        this.setState({
-            items: Product,
-        })
-    },2000)
+export const Main = () => {
+  const [items, setItems] = useState([]);
+  const carrito = []
 
+  setTimeout(() => {
+    setItems(Product);
+  }, 1000);
+
+  const addCarrito = (e) =>{
+    if(e.target.classList.contains('btn-shop')){
+      setCarro(e.target.parentElement)
+    }
+    e.stopPropagation()
   }
-  render() {
-    return (
-      <div className="container-cards">
-        <Cards
-        items={this.state.items} />
+
+  const setCarro = objeto => {
+    const producto = {
+      id: objeto.querySelector('.btn-shop').dataset.id,
+      title: objeto.querySelector('.title').textContent,
+      price: objeto.querySelector('span.copy').textContent,
+      cant: parseInt(objeto.querySelector('.countCard').textContent)
+    }
+    if(carrito.hasOwnProperty(producto.id)){
+      producto.cant = carrito[producto.id].cant + producto.cant
+    }
+
+    carrito[producto.id] = {...producto}
+
+
+    console.log(carrito)
+  }
+
+  
+
+  return (
+    <div>
+      <div className="container-cards" onClick={(e) =>{
+          addCarrito(e)
+        }}>
+        <Cards items={items} />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};

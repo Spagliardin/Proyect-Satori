@@ -1,17 +1,29 @@
-import image from './shopping-bag.png'
-import logo from './logoSatori1.png'
+// icons from font awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+
+import logo from "./logoSatori1.png";
+
+import { Hamburguer } from "../Hamburguer/Hamburguer";
+
+library.add(faShoppingBag);
 
 const MainMenu = () => {
-    return(
-  <main className="content">
-    <div></div>
-    <img src={logo} alt="Logo" />
-    <div className="shopping-bag">
-      <img src={image} alt="bag" height="46px" />
-      <span className="count">0</span>
-    </div>
-  </main>
-  )
+  const iconBag = <FontAwesomeIcon icon={faShoppingBag} size="3x" />;
+
+  return (
+    <header className="content">
+      <Hamburguer />
+      <div className="content-Image">
+      <img src={logo} alt="Logo" />
+      </div>
+      <div className="shopping-bag">
+        {iconBag}
+        <span className="count">0</span>
+      </div>
+    </header>
+  );
 };
 
 export default MainMenu;
