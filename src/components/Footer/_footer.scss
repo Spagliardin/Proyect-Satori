@@ -1,0 +1,25 @@
+footer{
+    min-height: 30vh;
+    margin-top: 100px;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    aside{
+        ul{
+            list-style: none;
+            li{
+                a{
+                    padding: 2px;
+                    color: white;
+                    text-decoration: none;
+                }
+                img{
+                    width: 200px;
+                }
+            }
+        }
+    }
+    
+}

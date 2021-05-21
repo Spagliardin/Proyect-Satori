@@ -9,6 +9,7 @@ import { Shirts } from "./views/Shirts/Shirts";
 import { Tshirts } from "./views/Tshirts/Tshirts";
 import { Pants } from "./views/Pants/Pants";
 import { Contact } from "./views/Contact/Contact";
+import { Footer } from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
             <Contact />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

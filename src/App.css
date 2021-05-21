@@ -144,7 +144,7 @@ body {
   overflow: hidden;
   padding: 16px;
   width: 400px;
-  height: 50vh;
+  min-height: 50vh;
   margin: 40px;
   text-align: center;
   color: whitesmoke;
@@ -273,3 +273,41 @@ body {
   .card:focus-within .content,
   .card:focus-within .content > *:not(.title) {
     transition-duration: 0s; } }
+
+.cart-Holder {
+  width: 400px;
+  height: 300px;
+  max-width: 600px;
+  min-height: 30vh;
+  position: absolute;
+  right: -50%;
+  display: flex;
+  background-color: blanchedalmond;
+  transition: all ease-in-out 300ms;
+  color: black; }
+  .cart-Holder span {
+    position: absolute;
+    color: black;
+    top: 100px;
+    left: 368px;
+    cursor: pointer; }
+
+.cart-Holder-Open {
+  transform: translateX(-167%); }
+
+footer {
+  min-height: 30vh;
+  margin-top: 100px;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  footer aside ul {
+    list-style: none; }
+    footer aside ul li a {
+      padding: 2px;
+      color: white;
+      text-decoration: none; }
+    footer aside ul li img {
+      width: 200px; }
