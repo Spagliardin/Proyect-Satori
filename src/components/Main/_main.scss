@@ -82,19 +82,20 @@ $time-animation: 700ms;
   .btn-shop{
     margin-top: 50px;
     box-shadow: -1px 1px 3px 1px #aeb3ac;
-    background-color:#e8edea;
+    background-color:rgb(29, 28, 28);
     border-radius:28px;
     border:1px solid #ffffff;
     display:inline-block;
     cursor:pointer;
-    color:#000000;
+    color:white;
     font-size:1rem;
     font-weight:bold;
     padding:14px 31px;
     text-decoration:none;
-    text-shadow:0px 1px 0px #969996;
+    // text-shadow:0px 1px 0px #969996;
     &:hover{
       background-color:#dde3da;
+      color: rgb(29, 28, 28);
     }
     &:active{
       position:relative;

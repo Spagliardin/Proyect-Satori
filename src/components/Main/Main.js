@@ -1,47 +1,75 @@
 import { Cards } from "./Cards/Card";
-import Product from "../Data/dataProduct";
+// import Product from "../Data/dataProduct";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { db } from "../../Firebase";
 
 export const Main = () => {
   const [items, setItems] = useState([]);
-  const carrito = []
+  // const cart = [];
 
-  setTimeout(() => {
-    setItems(Product);
-  }, 1000);
+  const getItem = async () => {
+    setTimeout(() => {
+      db.collection("items").onSnapshot((querySnapshot) => {
+        const docs = [];
+        querySnapshot.forEach((doc) => {
+          docs.push({ ...doc.data(), id: doc.id });
+        });
+        setItems(docs);
+      });
+    }, 1000);
+  };
 
-  const addCarrito = (e) =>{
-    if(e.target.classList.contains('btn-shop')){
-      setCarro(e.target.parentElement)
-    }
-    e.stopPropagation()
-  }
+  useEffect(() => {
+    getItem();
+  }, []);
 
-  const setCarro = objeto => {
-    const producto = {
-      id: objeto.querySelector('.btn-shop').dataset.id,
-      title: objeto.querySelector('.title').textContent,
-      price: objeto.querySelector('span.copy').textContent,
-      cant: parseInt(objeto.querySelector('.countCard').textContent)
-    }
-    if(carrito.hasOwnProperty(producto.id)){
-      producto.cant = carrito[producto.id].cant + producto.cant
-    }
+  // const addcart = (e) => {
+  //   if (e.target.classList.contains("btn-shop")) {
+  //     setCart(e.target.parentElement);
+  //   }
+  //   e.stopPropagation();
+  // };
 
-    carrito[producto.id] = {...producto}
+  // const setCart = (objeto) => {
+  //   const producto = {
+  //     id: objeto.querySelector(".btn-shop").dataset.id,
+  //     title: objeto.querySelector(".title").textContent,
+  //     price: objeto.querySelector("span.copy").textContent,
+  //     cant: parseInt(objeto.querySelector(".countCard").textContent),
+  //   };
+  //   if (cart.hasOwnProperty(producto.id)) {
+  //     producto.cant = cart[producto.id].cant + producto.cant;
+  //   }
 
+  //   cart[producto.id] = { ...producto };
+  //   paintCart();
+  // };
 
-    console.log(carrito)
-  }
-
-  
+  // const paintCart = () => {
+  //   console.log(cart);
+  //   Object.values(cart).forEach((producto) => {
+  //     return (
+  //       <div className="container-itemsCart">
+  //         <ul>
+  //           <li>{producto.id}</li>
+  //           <li>{producto.title}</li>
+  //           <li>{producto.price}</li>
+  //           <li>{producto.cant}</li>
+  //         </ul>
+  //       </div>
+  //     );
+  //   });
+  // };
 
   return (
     <div>
-      <div className="container-cards" onClick={(e) =>{
-          addCarrito(e)
-        }}>
+      <div
+        className="container-cards"
+        // onClick={(e) => {
+        //   addcart(e);
+        // }}
+      >
         <Cards items={items} />
       </div>
     </div>

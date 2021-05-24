@@ -5,10 +5,11 @@ export const CountBtn = () => {
   const [countShop, setCountShop] = useState([]);
 
   useEffect(() => {
-    document.querySelector(".btn-shop").addEventListener("click", () => {
-      setCountShop([...countShop, countCard]);
-    });
-
+    setTimeout(() => {
+        document.querySelector(".btn-shop").addEventListener("click", () => {
+        setCountShop([...countShop, countCard]);
+      });
+    }, 500);
   }, [countCard]);
 
   const allItemsBuy = countShop.reduce((a, b) => a + b, 0);

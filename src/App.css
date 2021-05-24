@@ -181,19 +181,19 @@ body {
   .card .btn-shop {
     margin-top: 50px;
     box-shadow: -1px 1px 3px 1px #aeb3ac;
-    background-color: #e8edea;
+    background-color: #1d1c1c;
     border-radius: 28px;
     border: 1px solid #ffffff;
     display: inline-block;
     cursor: pointer;
-    color: #000000;
+    color: white;
     font-size: 1rem;
     font-weight: bold;
     padding: 14px 31px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #969996; }
+    text-decoration: none; }
     .card .btn-shop:hover {
-      background-color: #dde3da; }
+      background-color: #dde3da;
+      color: #1d1c1c; }
     .card .btn-shop:active {
       position: relative;
       top: 1px; }
@@ -276,24 +276,31 @@ body {
 
 .cart-Holder {
   width: 400px;
-  height: 300px;
-  max-width: 600px;
+  max-height: calc(100vh - 20px);
+  max-width: 900px;
   min-height: 30vh;
   position: absolute;
-  right: -50%;
+  top: 10px;
+  right: -120%;
   display: flex;
   background-color: blanchedalmond;
   transition: all ease-in-out 300ms;
   color: black; }
   .cart-Holder span {
-    position: absolute;
+    position: relative;
     color: black;
-    top: 100px;
-    left: 368px;
+    top: 10px;
+    left: 90%;
     cursor: pointer; }
+  .cart-Holder .container-ItemsCart {
+    position: relative;
+    top: 20px;
+    left: 10px;
+    display: flex;
+    flex-direction: column; }
 
 .cart-Holder-Open {
-  transform: translateX(-167%); }
+  right: 10px; }
 
 footer {
   min-height: 30vh;
