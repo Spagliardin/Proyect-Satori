@@ -1,28 +1,14 @@
 import { Cards } from "./Cards/Card";
 // import Product from "../Data/dataProduct";
 
-import React, { useState, useEffect } from "react";
-import { db } from "../../Firebase";
+//context
+import { ProductContext } from '../../Contexts/ItemsContext'
+
+import React, { useContext } from "react";
 
 export const Main = () => {
-  const [items, setItems] = useState([]);
+  const value = useContext(ProductContext)
   // const cart = [];
-
-  const getItem = async () => {
-    setTimeout(() => {
-      db.collection("items").onSnapshot((querySnapshot) => {
-        const docs = [];
-        querySnapshot.forEach((doc) => {
-          docs.push({ ...doc.data(), id: doc.id });
-        });
-        setItems(docs);
-      });
-    }, 1000);
-  };
-
-  useEffect(() => {
-    getItem();
-  }, []);
 
   // const addcart = (e) => {
   //   if (e.target.classList.contains("btn-shop")) {
@@ -70,7 +56,8 @@ export const Main = () => {
         //   addcart(e);
         // }}
       >
-        <Cards items={items} />
+        <Cards items={value} />
+        {/* <Cart /> */}
       </div>
     </div>
   );
