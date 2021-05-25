@@ -3,12 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-// components
-import { CountBtn } from "../CountBtn/CountBtn";
-
 library.add(faShoppingCart);
 
-export const Cards = ({ items }) => {
+export const Cards = (props) => {
+  const {items, onAdd} = props
   return (
     <div className="container-cards">
       {items.map((product) => {
@@ -22,10 +20,10 @@ export const Cards = ({ items }) => {
               <h2 className="title">{product.title}</h2>
               <p className="copy">{product.desc}</p>
               <span className="copy">{product.price}</span>
-              <div className="container-btn">
+              {/* <div className="container-btn">
                 <CountBtn />
-              </div>
-              <button className="btn btn-shop" data-id={product.id}>
+              </div> */}
+              <button onClick={() => onAdd(product)} className="btn btn-shop" data-id={product.id}>
                 <FontAwesomeIcon icon={faShoppingCart} />
                 Agregar al Carrito
               </button>

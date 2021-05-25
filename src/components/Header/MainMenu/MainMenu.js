@@ -6,7 +6,6 @@ import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import logo from "./logoSatori1.png";
 
 import { Hamburguer } from "../Hamburguer/Hamburguer";
-import { CartHolder } from "../CartHolder/CartHolder";
 
 library.add(faShoppingBag);
 
@@ -26,7 +25,6 @@ const MainMenu = () => {
         {iconBag}
         <span className="count">0</span>
       </div>
-      <CartHolder />
     </header>
   );
 };

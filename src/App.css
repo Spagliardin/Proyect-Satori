@@ -283,6 +283,7 @@ body {
   top: 10px;
   right: -120%;
   display: flex;
+  flex-direction: column;
   background-color: blanchedalmond;
   transition: all ease-in-out 300ms;
   color: black; }
@@ -292,12 +293,14 @@ body {
     top: 10px;
     left: 90%;
     cursor: pointer; }
-  .cart-Holder .container-ItemsCart {
-    position: relative;
-    top: 20px;
-    left: 10px;
+  .cart-Holder h2 {
+    margin: 0 5px; }
+  .cart-Holder .container-itemsCart {
     display: flex;
     flex-direction: column; }
+    .cart-Holder .container-itemsCart .box-itemsCards {
+      display: flex;
+      justify-content: space-around; }
 
 .cart-Holder-Open {
   right: 10px; }
