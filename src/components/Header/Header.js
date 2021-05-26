@@ -1,16 +1,15 @@
-import React, { Component } from "react";
+import { FullMenu } from "./FullMenu/FullMenu";
+import { MainMenu } from "./MainMenu/MainMenu";
 
-import FullMenu from "./FullMenu/FullMenu";
-// import Hamburguer from "./Hamburguer/Hamburguer";
-import MainMenu from "./MainMenu/MainMenu";
+import React from "react";
 
-export default class Header extends Component {
-  render() {
-    return (
-      <div>
-        <FullMenu />
-        <MainMenu />
-      </div>
-    );
-  }
-}
+export const Header = (props) => {
+  const countCartItems = props;
+
+  return (
+    <div>
+      <FullMenu />
+      <MainMenu countCartItems={countCartItems} />
+    </div>
+  );
+};

@@ -10,6 +10,7 @@ library.add(faTimes);
 export const CartHolder = (props) => {
   const iconClose = <FontAwesomeIcon icon={faTimes} size="2x" />;
   const { cartItems, onAdd, onRemove } = props;
+  const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   return (
     <div className="cart-Holder">
       <span
@@ -21,27 +22,41 @@ export const CartHolder = (props) => {
       >
         {iconClose}
       </span>
-      {/* <h2>Carrito de compras</h2> */}
       <div className="container-itemsCart">
-        {cartItems.length === 0 && <div>Carrito vacio</div>}
+        {cartItems.length === 0 && (
+          <div className="title">No hay productos en su carrito</div>
+        )}
         {cartItems.map((product) => {
-            return(
-          <div className='box-itemsCards' key={product.id}>
-            <img src={product.img} style={{width : 75}} />
-            <section>
-                <div>{product.title}</div>
+          return (
+            <div className="box-itemsCards" key={product.id}>
+              <div className="item-image" >
+                <img src={product.img} alt={product.name} style={{ width: 100 }} />
+              </div>
+              <section className="item-info">
+                <div className="item-name">{product.title}</div>
                 <div>
-                    <button onClick={() => onAdd(product)}>+</button>
-                    {""}
-                    <button onClick={() => onRemove(product)}>-</button>
+                  <button onClick={() => onAdd(product)}>+</button>
+                  {""}
+                  <button onClick={() => onRemove(product)}>-</button>
                 </div>
-                <div>
-                {product.qty} x {product.price}
+                <div className="item-qty">
+                  {product.qty} x ${product.price.toFixed(2)}
                 </div>
-            </section>
-          </div>
-          )
+              </section>
+            </div>
+          );
         })}
+        {cartItems.length !== 0 && (
+          <div className='box-checkout'>
+            <div className="items-price">
+              <span>Total:</span>
+              <span>${itemsPrice.toFixed(2)}</span>
+            </div>
+            <button className="btn-buy" onClick={() => alert("ToDo Checkout")}>
+              Iniciar Compra
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

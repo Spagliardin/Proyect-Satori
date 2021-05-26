@@ -9,8 +9,9 @@ import { Hamburguer } from "../Hamburguer/Hamburguer";
 
 library.add(faShoppingBag);
 
-const MainMenu = () => {
-  
+export const MainMenu = (props) => {
+
+  const countCartItems = props;
   const iconBag = <FontAwesomeIcon icon={faShoppingBag} size="3x" />;
 
   return (
@@ -19,14 +20,19 @@ const MainMenu = () => {
       <div className="content-Image">
         <img src={logo} alt="Logo" />
       </div>
-      <div className="shopping-bag" onClick={() => {
-        document.querySelector('.cart-Holder').classList.toggle('cart-Holder-Open')
-      }}>
+      <div
+        className="shopping-bag"
+        onClick={() => {
+          document
+            .querySelector(".cart-Holder")
+            .classList.toggle("cart-Holder-Open");
+        }}
+      >
         {iconBag}
-        <span className="count">0</span>
+          {(
+            <span className="count">{Object.values(countCartItems.countCartItems)}</span>
+          )}
       </div>
     </header>
   );
 };
-
-export default MainMenu;

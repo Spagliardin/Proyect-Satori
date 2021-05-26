@@ -26,9 +26,9 @@ export const Footer = () => {
       <ul>
           <li><strong>Destacados</strong></li>
           <hr />
-          <li><a href="#">New In</a></li>
-          <li><a href="#">Pantalones</a></li>
-          <li><a href="#">Otras Temporadas</a></li>
+          <li><a href="#/">New In</a></li>
+          <li><a href="#/">Pantalones</a></li>
+          <li><a href="#/">Otras Temporadas</a></li>
         </ul>
       </aside>
       <aside>

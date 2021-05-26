@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const FullMenu = () => {
+export const FullMenu = () => {
 
   const style = {
     textDecoration: 'none',
@@ -33,4 +33,3 @@ const FullMenu = () => {
         </div>
   );
 };
-export default FullMenu;

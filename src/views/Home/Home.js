@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Header } from "../../components/Header/Header";
 import { CartHolder } from "../../components/Main/CartHolder/CartHolder";
 import { Main } from "../../components/Main/Main";
 import { ProductContextProvider } from "../../Contexts/ItemsContext";
@@ -34,8 +35,10 @@ export const Home = () => {
 
   return (
     <ProductContextProvider>
+      <Header countCartItems={cartItems.length} />
       <Main onAdd={onAdd} />
       <CartHolder onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}></CartHolder>
     </ProductContextProvider>
   );
 };
+

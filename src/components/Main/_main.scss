@@ -1,4 +1,4 @@
-$animation-cb: cubic-bezier(0.19, 1, 0.22, 1); 
+$animation-cb: cubic-bezier(0.19, 1, 0.22, 1);
 $time-animation: 700ms;
 
 .container-cards {
@@ -25,13 +25,13 @@ $time-animation: 700ms;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
     0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
     0 16px 16px rgba(0, 0, 0, 0.1);
-    
+
   background-size: contain;
   background-position: top;
 
-  .title{
+  .title {
     text-transform: uppercase;
-    text-shadow:0px 1px 0px #969996;
+    text-shadow: 0px 1px 0px #969996;
   }
 
   &:before {
@@ -79,30 +79,29 @@ $time-animation: 700ms;
     transition: transform calc($time-animation * 2) $animation-cb;
   }
 
-  .btn-shop{
+  .btn-shop {
     margin-top: 50px;
     box-shadow: -1px 1px 3px 1px #aeb3ac;
-    background-color:rgb(29, 28, 28);
-    border-radius:28px;
-    border:1px solid #ffffff;
-    display:inline-block;
-    cursor:pointer;
-    color:white;
-    font-size:1rem;
-    font-weight:bold;
-    padding:14px 31px;
-    text-decoration:none;
+    background-color: rgb(29, 28, 28);
+    border-radius: 28px;
+    border: 1px solid #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 14px 31px;
+    text-decoration: none;
     // text-shadow:0px 1px 0px #969996;
-    &:hover{
-      background-color:#dde3da;
+    &:hover {
+      background-color: #dde3da;
       color: rgb(29, 28, 28);
     }
-    &:active{
-      position:relative;
-	    top:1px;
+    &:active {
+      position: relative;
+      top: 1px;
     }
   }
-  
 }
 
 .content-card {
@@ -128,16 +127,16 @@ $time-animation: 700ms;
 }
 
 .container-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    .count{
-      font-size: 24px;
-      margin: 10px;
-      margin-top: 1.5rem;
-    }
-    .btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .count {
+    font-size: 24px;
+    margin: 10px;
+    margin-top: 1.5rem;
+  }
+  .btn {
     width: 40px;
     height: 40px;
     cursor: pointer;
@@ -172,7 +171,8 @@ $time-animation: 700ms;
     > *:not(.title) {
       opacity: 0;
       transform: translateY(1rem);
-      transition: transform $time-animation $animation-cb, opacity $time-animation $animation-cb;
+      transition: transform $time-animation $animation-cb,
+        opacity $time-animation $animation-cb;
     }
   }
 

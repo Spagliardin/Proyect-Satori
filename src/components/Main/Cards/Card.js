@@ -19,7 +19,7 @@ export const Cards = (props) => {
             <div className="content-card">
               <h2 className="title">{product.title}</h2>
               <p className="copy">{product.desc}</p>
-              <span className="copy">{product.price}</span>
+              <span className="copy">${product.price}</span>
               {/* <div className="container-btn">
                 <CountBtn />
               </div> */}

@@ -6,14 +6,14 @@ import { ProductContext } from "../../Contexts/ItemsContext";
 import React, { useContext } from "react";
 
 export const Main = (props) => {
-  const { cartItems, onAdd } = props;
+  const { onAdd } = props;
 
   const value = useContext(ProductContext);
 
   return (
     <div>
       <div className="container-cards">
-        <Cards cartItems={cartItems} items={value} onAdd={onAdd}/>
+        <Cards items={value} onAdd={onAdd}/>
       </div>
     </div>
   );
